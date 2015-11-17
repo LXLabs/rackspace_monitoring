@@ -221,8 +221,7 @@ module RackspaceMonitoringCookbook
         if %w(rhel fedora).include? node['platform_family']
           yum_repository 'monitoring' do
             description 'Rackspace Cloud Monitoring agent repo'
-            #baseurl "https://stable.packages.cloudmonitoring.rackspace.com/#{node['platform']}-#{node['platform_version'][0]}-x86_64"
-            uri "https://stable.packages.cloudmonitoring.rackspace.com/centos-7-x86_64/rackspace-monitoring-agent-2.2.3-amd64.rpm"
+            baseurl "https://stable.packages.cloudmonitoring.rackspace.com/#{node['platform']}-#{node['platform_version'][0]}-x86_64"
             gpgkey "https://monitoring.api.rackspacecloud.com/pki/agent/#{node['platform']}-#{node['platform_version'][0]}.asc"
             enabled true
             gpgcheck true
